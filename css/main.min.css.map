@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "scss/main.scss",
+        "scss/common.scss",
+        "scss/navigation.scss"
+    ],
+    "names": [],
+    "file": "main.min.css"
+}
