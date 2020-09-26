@@ -29,14 +29,13 @@ ul {
 }
 
 .header {
-  background-image: url(../images/main/cover_top.jpg);
   background-position: center;
   width: 100%;
   height: 100vh;
-
+  position: relative;
 
   @include mobile {
-    background: url(../images/main/cover_top--mobile.jpg) no-repeat;
+    background: url(../images/main/header--mobile.jpg) no-repeat;
     background-size: cover;
   }
 }

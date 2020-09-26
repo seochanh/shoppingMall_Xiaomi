@@ -1,11 +1,17 @@
 .navigation {
+  width: 100%;
   height: 56px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .logo {
   width: 56px;
   height: 56px;
   float: left;
+  position: relative;
+  left: 5px;
 }
 
 .logo__img {
@@ -95,15 +101,15 @@ ul {
 }
 
 .header {
-  background-image: url(../images/main/cover_top.jpg);
   background-position: center;
   width: 100%;
   height: 100vh;
+  position: relative;
 }
 
 @media (max-width: 767px) {
   .header {
-    background: url(../images/main/cover_top--mobile.jpg) no-repeat;
+    background: url(../images/main/header--mobile.jpg) no-repeat;
     background-size: cover;
   }
 }
