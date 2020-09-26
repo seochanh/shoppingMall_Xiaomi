@@ -1,6 +1,8 @@
 @charset "utf-8";
 
 @import "variables";
+@import "navigation";
+@import "footer";
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
@@ -26,7 +28,7 @@ ul {
   margin: 0;
 }
 
-header {
+.header {
   background-image: url(../images/main/cover_top.jpg);
   background-position: center;
   width: 100%;
@@ -36,50 +38,6 @@ header {
   @include mobile {
     background: url(../images/main/cover_top--mobile.jpg) no-repeat;
     background-size: cover;
-  }
-}
-
-nav {
-  height: 56px;
-}
-
-.logo {
-  width: 56px;
-  height: 56px;
-  float: left;
-
-  &__img {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.gnb {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
-  padding: 0 20px;
-
-  @include mobile {
-    display: none;
-  }
-}
-
-.category {
-
-  &__item {
-    float: left;
-    margin: 0 30px;
-  }
-}
-
-.member {
-
-  &__item {
-    float: left;
-    margin: 0 15px;
   }
 }
 
@@ -124,16 +82,16 @@ nav {
   }
 
   &__title {
-    font: 900 5em 'Roboto';
+    font: 900 em(80) 'Roboto';
     line-height: 1;
     
     @include mobile {
-      font-size: 2.5em;
+      font-size: em(40);
     }
   }
 
   &__text {
-    font-size: 0.875em;
+    font-size: em(14);
     padding: 70px 0 100px;
     line-height: 1.8;
 
@@ -195,7 +153,7 @@ nav {
   }
 
   &__text {
-    font-size: 1.188em;
+    font-size: em(18);
     font-weight: bold;
     height: 120px;
     display: flex;
@@ -203,7 +161,7 @@ nav {
     padding: 0 40px;
 
     @include mobile {
-      font-size: 0.938em;
+      font-size: em(15);
       height: 100px;
     }
   }
@@ -216,7 +174,7 @@ nav {
     height: 600px;
     background-image: url(../images/main/cover_scooter.jpg);
     background-position: center;
-    font: 900 5em "Roboto";
+    font: 900 em(80) "Roboto";
     line-height: 1;
     display: flex;
     align-items: flex-end;
@@ -231,8 +189,4 @@ nav {
   @include mobile {
     display: none;
   }
-}
-
-footer {
-  background-color: #101010;
 }

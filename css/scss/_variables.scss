@@ -4,3 +4,9 @@
     @content;
   };
 }
+// px to em
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}

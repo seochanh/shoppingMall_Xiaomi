@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+.footer {
+  background-color: #101010;
+  color: #939495;
+  padding: 50px 80px;
+  box-sizing: border-box;
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__list {
+    margin: 30px 0 50px;
+  }
+
+  &__item {
+    font-size: em(14);
+    margin-top: 10px;
+  }
+
+  &__rule {
+    border: solid 1px #939495;
+    margin-bottom: 26px;
+  }
+}
