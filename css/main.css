@@ -1,3 +1,94 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  font-size: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .tablet-hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+.table {
+  overflow: hidden;
+}
+
+.table__cell {
+  float: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 25%;
+  border-top: solid 1px #101010;
+  border-right: solid 1px #101010;
+}
+
+.table__cell--x2 {
+  width: 50%;
+  list-style: none;
+}
+
+@media (max-width: 767px) {
+  .table__cell {
+    width: 100%;
+    border: 0;
+    border-bottom: solid 1px #101010;
+  }
+}
+
+.table__img-box {
+  text-align: center;
+}
+
+.table__image {
+  height: calc(25vw - 80px);
+  min-height: 173px;
+}
+
+.table__text {
+  font-size: 1.125em;
+  font-weight: bold;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 40px;
+}
+
+@media (max-width: 767px) {
+  .table__text {
+    font-size: 0.9375em;
+  }
+}
+
 .navigation {
   width: 100%;
   height: 56px;
@@ -10,8 +101,6 @@
   width: 56px;
   height: 56px;
   float: left;
-  position: relative;
-  left: 5px;
 }
 
 .logo__img {
@@ -42,12 +131,17 @@
 
 .category__item {
   float: left;
-  margin: 0 30px;
+  margin: 0 3vw;
+}
+
+.member {
+  font-size: 0.875em;
+  font-weight: 400;
 }
 
 .member__item {
   float: left;
-  margin: 0 15px;
+  margin: 0 1.5vw;
 }
 
 .footer {
@@ -74,30 +168,6 @@
 .footer__rule {
   border: solid 1px #939495;
   margin-bottom: 26px;
-}
-
-body {
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
-h1,
-h2,
-p {
-  margin: 0;
-}
-
-a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  color: inherit;
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .header {
@@ -164,6 +234,12 @@ ul {
   color: #fff;
 }
 
+@media (max-width: 1023px) and (min-width: 768px) {
+  .recom__text-box {
+    padding: 4.5vw 7.2vw;
+  }
+}
+
 @media (max-width: 767px) {
   .recom__text-box {
     padding: 40px 15px;
@@ -179,6 +255,12 @@ ul {
   line-height: 1;
 }
 
+@media (max-width: 1023px) and (min-width: 768px) {
+  .recom__title {
+    font-size: 7.2vw;
+  }
+}
+
 @media (max-width: 767px) {
   .recom__title {
     font-size: 2.5em;
@@ -189,6 +271,12 @@ ul {
   font-size: 0.875em;
   padding: 70px 0 100px;
   line-height: 1.8;
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .recom__text {
+    padding: 6vw 0 6vw;
+  }
 }
 
 @media (max-width: 767px) {
@@ -208,19 +296,6 @@ ul {
           flex-direction: row-reverse;
 }
 
-.goods {
-  overflow: hidden;
-}
-
-.goods__item {
-  float: left;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 25%;
-  border-top: solid 1px #101010;
-  border-right: solid 1px #101010;
-}
-
 .goods__item:nth-child(3), .goods__item:nth-child(6) {
   border-right: 0;
 }
@@ -229,47 +304,8 @@ ul {
   border-bottom: solid 1px #101010;
 }
 
-.goods__item--x2 {
-  width: 50%;
-  list-style: none;
-}
-
-@media (max-width: 767px) {
-  .goods__item {
-    width: 100%;
-    border: 0;
-    border-bottom: solid 1px #101010;
-  }
-}
-
-.goods__img-box {
-  text-align: center;
-}
-
 .goods__image {
-  vertical-align: center;
-  height: calc(25vw - 80px);
-  min-height: 173px;
-}
-
-.goods__text {
-  font-size: 1.125em;
-  font-weight: bold;
-  height: 120px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 40px;
-}
-
-@media (max-width: 767px) {
-  .goods__text {
-    font-size: 0.9375em;
-    height: 100px;
-  }
+  padding-top: 10px;
 }
 
 .obj {
@@ -279,7 +315,7 @@ ul {
 .obj__cover {
   height: 600px;
   background-image: url(../images/main/cover_scooter.jpg);
-  background-position: center;
+  background-position: top 0 right 40%;
   font: 900 5em "Roboto";
   line-height: 1;
   display: -webkit-box;
@@ -294,7 +330,7 @@ ul {
 }
 
 .obj__image {
-  text-align: center;
+  padding-top: 45px;
 }
 
 @media (max-width: 767px) {

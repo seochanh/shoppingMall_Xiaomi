@@ -1,12 +1,24 @@
 // Media Query
+@mixin tablet {
+  @media (max-width: 1023px) and (min-width: 768px) {
+    @content;
+  };
+}
 @mixin mobile {
   @media (max-width: 767px){
     @content;
   };
 }
+
 // px to em
 $browser-context: 16; // Default
 
 @function em($pixels, $context: $browser-context) {
   @return #{$pixels/$context}em;
+}
+
+// px to vw
+@function get-vw($target) { 
+  $vw-context: (1000*.01) * 1px;
+  @return ($target/$vw-context) * 1vw;
 }
