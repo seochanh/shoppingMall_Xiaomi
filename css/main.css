@@ -53,6 +53,10 @@ ul {
   list-style: none;
 }
 
+.table__cell--x3 {
+  width: 75%;
+}
+
 @media (max-width: 767px) {
   .table__cell {
     width: 100%;
@@ -230,7 +234,7 @@ ul {
 }
 
 .recom__text-box--black {
-  background-color: #000;
+  background-color: #101010;
   color: #fff;
 }
 

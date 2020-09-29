@@ -22,3 +22,8 @@ $browser-context: 16; // Default
   $vw-context: (1000*.01) * 1px;
   @return ($target/$vw-context) * 1vw;
 }
+
+// color
+$white: #fff;
+$black: #101010;
+$dark-gray: #707070;

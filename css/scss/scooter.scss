@@ -1,0 +1,208 @@
+@charset "utf-8";
+
+@import "variables";
+@import "common";
+@import "navigation";
+@import "footer";
+
+// header
+.header {
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gnb {
+  color: $black;
+}
+
+.order {
+  flex: 1;
+  margin-left: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__wrap {
+    width: 950px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: em(50);
+  }
+
+  &__color {
+    font-weight: bold;
+    font-size: 18px;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 72px;
+
+    &-box {
+      text-indent: -9999px;
+    }
+
+    &-picker {
+      border-radius: 48%;
+      width: 30px;
+      height: 30px;
+      float: left;
+    }
+
+    &-white {
+      box-sizing: border-box;
+      border: solid 2px $dark-gray;
+      margin-right: 16px;
+    }
+
+    &-black {
+      background-color: #000;
+    }
+  }
+
+  &__button {
+    font: 900 em(21) "Roboto";
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-buy {
+      background-color: $black;
+      color: #fff;
+      margin: 40px 0 16px;
+      ;
+    }
+
+    &-cart {
+      border: solid 1px $dark-gray;
+      box-sizing: border-box;
+    }
+  }
+}
+
+// contents
+.content {
+  width: 100%;
+  background-position: center;
+
+  &__container {
+    width: 950px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: em(48);
+  }
+
+  &__subtitle {
+    margin-top: 32px;
+    color: #c3c3c3;
+    font-size: em(24);
+  }
+}
+
+.content01 {
+  text-indent: -9999px;
+  background-image: url(../images/scooter/scooter-01.jpg);
+  height: 480px;
+}
+
+.content02 {
+  background-image: url(../images/scooter/scooter-02.jpg);
+  color: #fff;
+  overflow: hidden;
+
+  &__container {
+    height: 1199.5px;
+    position: relative;
+  }
+
+  &__txt-box {
+    width: 400px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+
+  &__title {
+    font-size: em(60);
+  }
+
+  &__subtitle {
+    margin-top: 24px;
+  }
+
+  &__horizental-rule {
+    margin: 70px 0 56px;
+    background-color: $dark-gray;
+    width: 100px;
+    height: 4px;
+  }
+
+  &__text {
+    font-size: em(24);
+    line-height: 2.8;
+  }
+}
+
+.content03 {
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 160px auto 100px;
+  }
+
+  &__img-box {
+    margin: 100px 0;
+  }
+
+  &__list {
+    font-size: em(34);
+    font-weight: 500;
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+
+  &__item {
+    box-sizing: border-box;
+    text-align: center;
+    padding: 90px 0;
+    width: 50%;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      border-bottom: solid 2px #f2f2f2;
+    }
+    &:nth-child(1),
+    &:nth-child(3) {
+      border-right: solid 2px #f2f2f2;
+    }
+  }
+}
+
+.content04 {
+  background-image: url(../images/scooter/scooter-04.jpg);
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+
+  &__box {
+    width: 33.3333%;
+    height: 100vh;
+    background-color: #000000b3;
+  }
+}
