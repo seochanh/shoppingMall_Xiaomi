@@ -1,5 +1,6 @@
 body {
   font-family: 'Noto Sans KR', sans-serif;
+  color: $black;
 }
 
 h1,
@@ -29,6 +30,7 @@ ul {
     display: none;
   }
 }
+
 .mobile-hidden {
   @include mobile {
     display: none;
@@ -81,5 +83,11 @@ ul {
     @include mobile {
       font-size: em(15);
     }
+  }
+}
+
+.span--block {
+  @include mobile {
+    display: block;
   }
 }

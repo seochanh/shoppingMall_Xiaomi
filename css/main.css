@@ -1,5 +1,6 @@
 body {
   font-family: 'Noto Sans KR', sans-serif;
+  color: #101010;
 }
 
 h1,
@@ -23,7 +24,7 @@ ul {
   margin: 0;
 }
 
-@media (max-width: 1023px) and (min-width: 768px) {
+@media (max-width: 1023px) {
   .tablet-hidden {
     display: none;
   }
@@ -97,6 +98,7 @@ ul {
   width: 100%;
   height: 56px;
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
 }
@@ -238,7 +240,7 @@ ul {
   color: #fff;
 }
 
-@media (max-width: 1023px) and (min-width: 768px) {
+@media (max-width: 1023px) {
   .recom__text-box {
     padding: 4.5vw 7.2vw;
   }
@@ -259,7 +261,7 @@ ul {
   line-height: 1;
 }
 
-@media (max-width: 1023px) and (min-width: 768px) {
+@media (max-width: 1023px) {
   .recom__title {
     font-size: 7.2vw;
   }
@@ -277,7 +279,7 @@ ul {
   line-height: 1.8;
 }
 
-@media (max-width: 1023px) and (min-width: 768px) {
+@media (max-width: 1023px) {
   .recom__text {
     padding: 6vw 0 6vw;
   }

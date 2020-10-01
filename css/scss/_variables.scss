@@ -1,6 +1,6 @@
 // Media Query
 @mixin tablet {
-  @media (max-width: 1023px) and (min-width: 768px) {
+  @media (max-width: 1023px) {
     @content;
   };
 }
@@ -26,4 +26,12 @@ $browser-context: 16; // Default
 // color
 $white: #fff;
 $black: #101010;
-$dark-gray: #707070;
+$dark-gray: #727272;
+$light-gray: #f2f2f2;
+$gray-in-black: #9e9e9e;
+
+@mixin flex($d:flex, $j:center, $a:center) {
+  display: $d;
+  justify-content: $j;
+  align-items: $a;
+}
