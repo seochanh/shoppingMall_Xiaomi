@@ -3,124 +3,46 @@
 @import "variables";
 @import "common";
 @import "navigation";
+@import "detail-page";
 @import "footer";
 
-// header
-.header {
-  height: 95vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.gnb {
-  color: $black;
-}
-
-.order {
-  flex: 1;
-  margin-left: 120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  &__wrap {
-    width: 950px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__title {
-    font-size: em(50);
-  }
-
-  &__color {
-    font-weight: bold;
-    font-size: 18px;
-    height: 56px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 72px;
-
-    &-box {
-      text-indent: -9999px;
-    }
-
-    &-picker {
-      border-radius: 48%;
-      width: 30px;
-      height: 30px;
-      float: left;
-    }
-
-    &-white {
-      box-sizing: border-box;
-      border: solid 2px $dark-gray;
-      margin-right: 16px;
-    }
-
-    &-black {
-      background-color: #000;
-    }
-  }
-
-  &__button {
-    font: 900 em(21) "Roboto";
-    height: 72px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &-buy {
-      background-color: $black;
-      color: #fff;
-      margin: 40px 0 16px;
-      ;
-    }
-
-    &-cart {
-      border: solid 1px $dark-gray;
-      box-sizing: border-box;
-    }
-  }
-}
-
-// contents
-.content {
-  width: 100%;
-  background-position: center;
-
-  &__container {
-    width: 950px;
-    margin: 0 auto;
-  }
-
-  &__title {
-    font-size: em(48);
-  }
-
-  &__subtitle {
-    margin-top: 32px;
-    color: #c3c3c3;
-    font-size: em(24);
-  }
-}
-
+// 긴 운행거리, 접이식 디자인, 이중 안전 브레이크
 .content01 {
-  text-indent: -9999px;
   background-image: url(../images/scooter/scooter-01.jpg);
-  height: 480px;
+  height: 0;
+  padding-top: 29.7213%;
+
+  @include tablet {
+    background-repeat: no-repeat;
+    background-size: 170%;
+    background-position: center;
+  }
+
+  @include mobile {
+    background-image: url(../images/scooter/scooter-01--mobile.jpg);
+    background-size: contain;
+    padding-top: 74.151vw;
+  }
 }
 
+// Mi 전동킥보드
 .content02 {
   background-image: url(../images/scooter/scooter-02.jpg);
   color: #fff;
   overflow: hidden;
 
+  @include mobile {
+    // background: url(../images/scooter/scooter-02--mobile.jpg) no-repeat;
+    background-size: 170vw;
+  }
+
   &__container {
     height: 1199.5px;
     position: relative;
+
+    @include mobile {
+      height: 106vw;
+    }
   }
 
   &__txt-box {
@@ -128,34 +50,65 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    left: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    left: 45%;
+
+    @include mobile {
+      left: 40%;
+    }
   }
 
   &__title {
     font-size: em(60);
+
+    @include tablet {
+      font-size: get-vw(60px);
+    }
+
+    @include mobile {
+      font-size: em(26);
+    }
   }
 
   &__subtitle {
-    margin-top: 24px;
-  }
+    margin-top: 1em;
 
-  &__horizental-rule {
-    margin: 70px 0 56px;
-    background-color: $dark-gray;
-    width: 100px;
-    height: 4px;
+
+    @include mobile {
+      margin-top: 8px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      margin: 70px 0 56px;
+      background-color: $dark-gray;
+      width: 100px;
+      height: 4px;
+
+      @include mobile {
+        margin: 40px 0 16px;
+        width: 59px;
+        height: 2px;
+      }
+    }
   }
 
   &__text {
     font-size: em(24);
     line-height: 2.8;
+
+    @include tablet {
+      font-size: get-vw(21px);
+    }
+
+    @include mobile {
+      font-size: em(14);
+      line-height: 2;
+    }
   }
 }
 
+// 혁신적인 접이식 설계
 .content03 {
 
   &__container {
@@ -163,18 +116,38 @@
     flex-direction: column;
     align-items: center;
     margin: 160px auto 100px;
+    text-align: center;
+
+    @include mobile {
+      margin: 48px auto;
+    }
   }
 
   &__img-box {
-    margin: 100px 0;
+    margin: 100px 0 20px;
+
+    @include mobile {
+      margin-top: 40px;
+    }
+  }
+
+  &__image {
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__list {
-    font-size: em(34);
+    font-size: em(28);
     font-weight: 500;
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 
+    @include mobile {
+      font-size: em(14);
+    }
   }
 
   &__item {
@@ -185,24 +158,375 @@
 
     &:nth-child(1),
     &:nth-child(2) {
-      border-bottom: solid 2px #f2f2f2;
+      border-bottom: solid 2px $light-gray;
     }
+
     &:nth-child(1),
     &:nth-child(3) {
-      border-right: solid 2px #f2f2f2;
+      border-right: solid 2px $light-gray;
+    }
+
+    @include mobile {
+      padding: 40px 0;
     }
   }
 }
 
+// 야간 주행의 안전 보장
 .content04 {
   background-image: url(../images/scooter/scooter-04.jpg);
   height: 100vh;
   display: flex;
   justify-content: flex-start;
 
+  @include mobile {
+    background-size: cover;
+    height: 423px;
+  }
+
   &__box {
     width: 33.3333%;
     height: 100vh;
     background-color: #000000b3;
+    color: $white;
+    @include flex;
+    flex-direction: column;
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include mobile {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__icon {
+    width: 79px;
+    height: 79px;
+    background: url(../images/scooter/scooter-icons.png) no-repeat top right;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-size: em(24);
+
+    &::after {
+      content: "";
+      display: block;
+      width: 56px;
+      height: 2px;
+      background-color: $dark-gray;
+      margin: 80px auto 40px;
+
+      @include mobile {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  &__text {
+    font-size: em(15);
+    text-align: center;
+    color: $gray-in-black;
+    line-height: 2;
+
+    @include mobile {
+      font-size: em(14);
+    }
+  }
+}
+
+// 그립감이 편안한 미끄럼 방지 핸들
+.content05 {
+  background: #f2f3f4 url(../images/scooter/scooter-05.jpg) no-repeat;
+  height: 100vh;
+  position: relative;
+
+  @include mobile {
+    background-position: center bottom;
+    background-size: 140%;
+    height: 554px;
+  }
+
+  &__container {
+    position: relative;
+    top: 90px;
+    left: 20px;
+
+    @include mobile {
+      top: 32px;
+    }
+  }
+
+  &__title {
+    font-size: em(32);
+    padding-top: 48px;
+
+    @include mobile {
+      font-size: em(24);
+    }
+  }
+
+  &__subtitle {
+    font-size: em(18);
+    margin-top: 20px;
+
+    @include mobile {
+      font-size: em(14);
+      line-height: 1.4;
+      margin-top: 10px;
+    }
+  }
+}
+
+// 에너지 회수 시스템
+.content06 {
+  background: #000 url(../images/scooter/scooter-06.jpg) no-repeat bottom center;
+  color: $white;
+  text-align: center;
+
+  @include mobile {
+    background-size: 120vw;
+  }
+
+  &__container {
+    @include flex($j: flex-start);
+    flex-direction: column;
+    height: 1200px;
+
+    @include mobile {
+      height: 600px;
+    }
+  }
+
+  &__title {
+    padding-top: 120px;
+
+    @include mobile {
+      padding-top: 56px;
+    }
+  }
+
+  &__icon {
+    width: 100px;
+    height: 100px;
+    background: url(../images/scooter/scooter-icons.png) no-repeat;
+    background-position: 0 -155px;
+    margin: 40px 0;
+
+    @include mobile {
+      margin: 0;
+      transform: scale(0.7);
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-size: em(21);
+    color: $gray-in-black;
+    line-height: 2.4;
+
+    @include mobile {
+      font-size: em(14);
+    }
+  }
+}
+
+// 30km의 긴 주행거리
+.content07 {
+  background: #000 url(../images/scooter/scooter-07.jpg) no-repeat top right;
+  color: $gray-in-black;
+  
+  @include mobile {
+    background-size: 80%;
+  }
+  
+  &__container {
+    height: 100vh;
+    @include flex;
+    flex-direction: column;
+    
+    @include mobile {
+      height: 850px;
+      text-align: center;
+      justify-content: flex-start;
+    }
+  }
+
+  &__title {
+    width: 550px;
+    color: $white;
+
+    @include mobile {
+      margin-top: 150px;
+    }
+  }
+  
+  &__subtitle {
+    width: 550px;
+
+    @include mobile {
+      margin-top: 24px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 32px;
+    font-size: em(18);
+
+    @include mobile {
+      margin-top: 16px;
+    }
+  }
+
+  &__item {
+    width: 33.3333%;
+    height: 190px;
+    @include flex;
+    flex-direction: column;
+
+    @include mobile {
+      width: 50%;
+      height: 150px;
+    }
+
+    &-icon {
+      width: 67px;
+      height: 67px;
+      background: url(../images/scooter/scooter-icons.png) no-repeat;
+      margin-bottom: 16px;
+    }
+
+    &:nth-child(1) i {
+      background-position: 0 -261px;
+    }
+
+    &:nth-child(2) i {
+      background-position: -66px -261px;
+    }
+
+    &:nth-child(3) i {
+      background-position: -133px -261px;
+    }
+
+    &:nth-child(4) i {
+      background-position: 0 -329px;
+    }
+
+    &:nth-child(5) i {
+      background-position: -66px -329px;
+    }
+
+    &:nth-child(6) i {
+      background-position: -133px -329px;
+    }
+  }
+}
+
+// Mi 홈 앱
+.content08 {
+  background-color: #f5f9fa;
+
+  &__container {
+    height: 100vh;
+    @include flex($j: space-around);
+
+    @include mobile {
+      height: 890px;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      padding-top: 88px;
+    }
+  }
+
+  &__image {
+
+    @include mobile {
+      width: 80%;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+
+    @include mobile {
+      position: absolute;
+      top: 44px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__text {
+    color: $dark-gray;
+    margin: 40px 0 120px;
+    line-height: 2.4;
+
+    @include mobile {
+      font-size: em(14);
+      line-height: 2;
+      text-align: left;
+      margin: 20px 0 30px;
+    }
+  }
+
+  &__list {
+    color: $dark-gray;
+  }
+
+  &__item {
+    height: 67px;
+    display: flex;
+    align-items: center;
+    text-indent: 20px;
+
+    @include mobile {
+      flex-direction: column;
+      text-indent: 0;
+      width: 50%;
+      height: 106px;
+      float: left;
+    }
+
+    &-icon {
+      width: 66px;
+      height: 66px;
+      background: url(../images/scooter/scooter-icons.png) no-repeat;
+    }
+
+    &:first-child {
+      margin-bottom: 30px;
+    }
+
+    &:nth-child(1) i {
+      background-position: 0 -84px;
+    }
+
+    &:nth-child(2) i {
+      background-position: -65px -84px;
+    }
+
+    &-text {
+
+      @include mobile {
+        padding-top: 20px;
+      }
+    }
+  }
+}
+
+.content09 {
+  height: 100vh;
+  background-image: url(../images/scooter/scooter-09.jpg);
+  background-size: cover;
+
+  @include mobile {
+    height: 82.133vw;
+    background-image: url(../images/scooter/scooter-09--mobile.jpg);
   }
 }
