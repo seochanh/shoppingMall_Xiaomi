@@ -1,4 +1,172 @@
 @charset "utf-8";
 
-@import "common.scss";
-@import "navigation.scss";
+@import "variables";
+@import "common";
+@import "navigation";
+@import "footer";
+
+.header {
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  @include mobile {
+    background: url(../images/main/header--mobile.jpg) no-repeat;
+    background-size: cover;
+  }
+}
+
+.recom {
+  display: flex;
+
+  @include mobile {
+    flex-wrap: wrap;
+  }
+
+  &__img-box {
+    width: 50%;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__text-box {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 50px 80px;
+
+    @include tablet {
+      padding: get-vw(45px) get-vw(72px);
+    }
+
+    @include mobile {
+      padding: 40px 15px;
+      width: 100%;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include mobile {
+      justify-content: flex-start;
+    }
+  }
+
+  &__title {
+    font: 900 em(80) 'Roboto';
+    line-height: 1;
+
+    @include tablet {
+      font-size: get-vw(72px);
+    }
+
+    @include mobile {
+      font-size: em(40);
+    }
+  }
+
+  &__text {
+    font-size: em(14);
+    padding: 70px 0 100px;
+    line-height: 1.8;
+    
+    @include tablet {
+      padding: get-vw(60px) 0 get-vw(60px);
+    }
+
+    @include mobile {
+      padding: 24px 0;
+    }
+  }
+
+  &__button {
+    font-style: normal;
+    font-weight: 900;
+
+    &::after {
+      content: "";
+      vertical-align: bottom;
+      display: inline-block;
+      width: em(16);
+      height: em(16);
+      margin-left: 5px;
+      background: url(../images/main/icon_more.png) no-repeat center;
+      background-size: em(16);
+    }
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+
+  &--black {
+
+    &__text-box {
+      background-color: $black;
+      color: $white;
+    }
+
+    &__button {
+        
+      &::after {
+        background: url(../images/main/icon_more--white.png) no-repeat center;
+        background-size: em(16); 
+      }
+    }
+  }
+}
+
+.goods {
+
+  &__item {
+
+    &:nth-child(3),
+    &:nth-child(6) {
+      border-right: 0;
+    }
+
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6) {
+      border-bottom: solid 1px $black;
+    }
+  }
+
+  &__image {
+    padding-top: 10px;
+  }
+}
+
+.obj {
+  width: 100%;
+
+  &__cover {
+    height: 600px;
+    background-image: url(../images/main/cover_scooter.jpg);
+    background-position: top 0 right 40%;
+    font: 900 em(80) "Roboto";
+    line-height: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 90px 80px;
+    box-sizing: border-box;
+  }
+
+  &__image {
+    padding-top: 45px;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
